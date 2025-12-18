@@ -2,7 +2,6 @@ package com.dev_ki.controle_financeiro_api.controllers;
 
 import com.dev_ki.controle_financeiro_api.domain.user.UserService;
 import com.dev_ki.controle_financeiro_api.dto.LoginDTO;
-import com.dev_ki.controle_financeiro_api.dto.LoginResponseDTO;
 import com.dev_ki.controle_financeiro_api.dto.UserCreateDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -25,12 +24,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public LoginResponseDTO login(@RequestBody LoginDTO dto){
+    public String login(@RequestBody LoginDTO dto){
         return userService.login(dto);
-    }
-
-    @GetMapping("/me")
-    public String me(){
-        return "Acesso Autorizado!";
     }
 }

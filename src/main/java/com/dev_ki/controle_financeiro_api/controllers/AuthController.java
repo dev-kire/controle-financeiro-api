@@ -2,7 +2,6 @@ package com.dev_ki.controle_financeiro_api.controllers;
 
 import com.dev_ki.controle_financeiro_api.domain.user.UserService;
 import com.dev_ki.controle_financeiro_api.dto.LoginDTO;
-import com.dev_ki.controle_financeiro_api.dto.LoginResponseDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +20,8 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid LoginDTO dto){
-        LoginResponseDTO response = userService.login(dto);
-        return ResponseEntity.ok(response);
+    public ResponseEntity<?> login(@RequestBody @Valid LoginDTO dto){
+        String token = userService.login(dto);
+        return ResponseEntity.ok(token);
     }
 }
