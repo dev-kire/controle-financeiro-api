@@ -1,5 +1,6 @@
 package com.dev_ki.controle_financeiro_api.domain.category;
 
+import com.dev_ki.controle_financeiro_api.domain.user.User;
 import jakarta.persistence.*;
 import java.util.UUID;
 
@@ -10,6 +11,10 @@ public class Category {
     @Id
     @GeneratedValue
     private UUID id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     private String name;
 
@@ -34,4 +39,13 @@ public class Category {
     public void setType(String type) {
         this.type = type;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }
