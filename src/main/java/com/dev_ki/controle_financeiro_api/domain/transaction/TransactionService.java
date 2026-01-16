@@ -7,7 +7,6 @@ import com.dev_ki.controle_financeiro_api.domain.user.UserRepository;
 import com.dev_ki.controle_financeiro_api.dto.TransactionCreateDTO;
 import com.dev_ki.controle_financeiro_api.dto.TransactionResponseDTO;
 import com.dev_ki.controle_financeiro_api.dto.TransactionUpdateDTO;
-import org.springframework.cglib.core.Local;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
